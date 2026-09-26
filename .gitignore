@@ -1,0 +1,22 @@
+# Generated static-site output
+dist/
+
+# Local tooling and secrets
+.env
+.env.*
+!.env.example
+credentials.json
+*.pem
+*.key
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Test and cache output
+coverage/
+.pytest_cache/
+node_modules/
+
