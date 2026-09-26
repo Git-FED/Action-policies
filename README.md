@@ -1,5 +1,7 @@
 # GitHub Actions Budget Policy
 
+<img width="2560" height="1440" alt="github-storage-saver" src="https://github.com/user-attachments/assets/54c814f8-8b46-443d-b584-5dc4a98e1469" />
+
 A practical policy, template library, audit toolkit, and static reference site for teams that need to control GitHub Actions quota before CI becomes an operational surprise.
 
 ## Who this is for
