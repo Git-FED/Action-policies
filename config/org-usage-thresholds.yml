@@ -1,0 +1,11 @@
+# Internal review thresholds. These are alerts for human investigation,
+# not claims about GitHub&apos;s billing formula.
+review:
+  percent_of_included_minutes:
+    notice: 50
+    action: 70
+    urgent: 85
+    incident: 95
+  cadence: weekly
+  owner: actions-budget-maintainers
+

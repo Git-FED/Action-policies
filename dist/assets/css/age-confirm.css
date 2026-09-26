@@ -1,0 +1,4 @@
+.age-panel { margin: 2rem 0; padding: 1.5rem; border: 1px solid rgba(255,203,114,.35); border-radius: 1rem; background: rgba(255,203,114,.08); }
+.age-panel[hidden] { display: none; }
+.age-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+

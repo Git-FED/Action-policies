@@ -1,0 +1,8 @@
+artifacts:
+  default_max_days: 3
+  preferred_diagnostic_days: 1
+  exception_file: policies/exceptions.md
+
+jobs:
+  default_timeout_minutes: 20
+
