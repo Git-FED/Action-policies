@@ -1,0 +1,5 @@
+# Cloudflare Pages uses dist/ as the deployment directory.
+# Configure the project name and secrets in the Cloudflare dashboard or CI.
+project_name = "actions-budget-policy"
+build_output_directory = "dist"
+

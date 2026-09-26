@@ -1,0 +1,10 @@
+{
+  "name": "actions-budget-policy-site",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "bash scripts/build-site.sh .",
+    "test:html": "bash scripts/validate-html.sh site"
+  }
+}
+
