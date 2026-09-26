@@ -1,0 +1,7 @@
+/old-quota /redirects/github-actions-quota/ 301
+/actions-budget /redirects/actions-budget/ 301
+/ci-budget /redirects/ci-budget/ 301
+/github-actions-quota /redirects/github-actions-quota/ 301
+/monitoring /redirects/monitoring/ 301
+/templates /templates/ 200
+
