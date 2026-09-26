@@ -1,0 +1,35 @@
+# Template only: enable after defining a real release artifact and owner.
+name: Release (manual template)
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing tag to release
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ inputs.tag }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
+      - run: echo "Build and verify the release artifact here."
+      - name: Upload short-lived evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-evidence
+          path: release-evidence/
+          retention-days: 3
+          if-no-files-found: ignore
+

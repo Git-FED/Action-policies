@@ -1,0 +1,44 @@
+# Copy this file to .github/workflows/ when a repository has a Dockerfile.
+name: Docker CI (optimized)
+
+on:
+  pull_request:
+    branches: [main]
+    paths-ignore: ['**/*.md', 'docs/**']
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - name: Build image without pushing
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          load: true
+          tags: ci-test:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - run: docker image inspect ci-test:${{ github.sha }} >/dev/null
+      - name: Write build summary
+        run: echo "Built ci-test:${GITHUB_SHA}" > docker-build-summary.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: docker-build-summary
+          path: docker-build-summary.txt
+          retention-days: 1
+
