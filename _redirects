@@ -1,7 +1,7 @@
-/old-quota /redirects/github-actions-quota/ 301
-/actions-budget /redirects/actions-budget/ 301
-/ci-budget /redirects/ci-budget/ 301
-/github-actions-quota /redirects/github-actions-quota/ 301
-/monitoring /redirects/monitoring/ 301
-/templates /templates/ 200
+/old-quota /redirects/github-actions-quota/index.html 301
+/actions-budget /redirects/actions-budget/index.html 301
+/ci-budget /redirects/ci-budget/index.html 301
+/github-actions-quota /redirects/github-actions-quota/index.html 301
+/monitoring /redirects/monitoring/index.html 301
+/templates /templates/index.html 200
 
