@@ -34,3 +34,17 @@ h1,h2,h3{line-height:1.08;letter-spacing:-.05em} h1{font-size:clamp(3rem,7vw,6.7
 @media(max-width:620px){.support-hero-card{align-items:flex-start;flex-direction:column}.support-signal{min-width:5rem}.tab-list{width:100%;overflow-x:auto}.tab-button{white-space:nowrap}.provider-grid{grid-template-columns:1fr}.provider-featured{grid-column:span 1}.inline-support-inner{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.cursor-glow,.progress-bar{display:none}.support-signal span{animation:none}}
 .provider-card,.provider-card p,.provider-card h3,.provider-card a,.embed-note{min-width:0;overflow-wrap:anywhere;word-break:break-word}.provider-head{min-width:0}.provider-head>div{min-width:0}.provider-head h3{overflow-wrap:anywhere}.paypal-box,.stripe-box,.embed-frame{width:100%;max-width:100%;overflow:hidden}.paypal-box>div{width:100%;max-width:100%}.paypal-box iframe{max-width:100%!important}.stripe-box{overflow-x:auto}.stripe-box stripe-buy-button{display:block;max-width:100%;min-width:0}.image-button{max-width:100%;overflow:hidden}.image-button img{max-width:100%;object-fit:contain}
+
+/* Widescreen layout: use the full desktop canvas while keeping readable text measure. */
+:root{--max:1480px}
+.nav,.wrap,.footer-inner,.inline-support{width:100%;max-width:var(--max)}
+.wrap{padding:clamp(3.5rem,7vw,7rem) clamp(1.25rem,4vw,4rem)}
+.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(3rem,7vw,9rem);min-height:74vh}
+.prose{max-width:none}
+.prose>p,.prose>h1,.prose>h2,.prose>h3,.prose>ul,.prose>ol,.prose>blockquote,.prose>.notice{max-width:92ch}
+.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2vw,2rem)}
+.budget-board{min-height:500px;padding:clamp(1.35rem,2.4vw,2.2rem)}
+.inline-support{margin-left:auto;margin-right:auto}
+.tab-button{text-decoration:none;display:inline-flex;align-items:center}
+@media(max-width:980px){.hero{grid-template-columns:1fr;gap:3rem}.budget-board{max-width:840px}}
+@media(min-width:1500px){.wrap{padding-left:clamp(4rem,7vw,8rem);padding-right:clamp(4rem,7vw,8rem)}}
